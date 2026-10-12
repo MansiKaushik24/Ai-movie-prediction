@@ -29,3 +29,11 @@ API routes: `GET /api/health`, `GET /api/movies`, `GET /api/movies/:id`, `POST /
 
 ## Deployment
 Deploy the React client and Express API as separate services. Set `VITE_API_URL` in the client environment to the deployed API base URL (ending in `/api`), and set `MONGODB_URI` and `CLIENT_URL` on the backend. Never commit secrets.
+
+
+## User accounts and protected features
+- Public visitors see the CineMind welcome page and can choose **Log in** or **Create account**.
+- Register/login uses MongoDB user records, bcrypt password hashing, and a signed JWT session.
+- Movie discovery, recommendations, and rating prediction API endpoints require a valid login token.
+- Configure `MONGODB_URI` and a private `JWT_SECRET` (at least 32 random characters) in the backend environment. Never commit real secrets.
+- Set `VITE_API_URL` in Vercel to the deployed backend API URL ending in `/api`. The backend must be deployed separately and its `CLIENT_URL` must include your deployed frontend origin.
