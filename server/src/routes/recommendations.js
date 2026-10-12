@@ -1,7 +1,8 @@
 const express = require("express");
 const demoMovies = require("../data/movies");
 const router = express.Router();
-router.post("/", (req, res) => {
+const requireAuth = require("../middleware/requireAuth");
+router.post("/", requireAuth, (req, res) => {
  const { genres = [], minRating = 0 } = req.body || {};
  const selected = Array.isArray(genres) ? genres.map(String) : [];
  const recommendations = demoMovies.filter(m => (!selected.length || selected.includes(m.genre)) && m.rating >= Number(minRating || 0))
