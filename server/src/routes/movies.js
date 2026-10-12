@@ -28,7 +28,7 @@ router.get("/", async (req, res, next) => {
 });
 router.get("/:id", async (req, res, next) => {
  try {
-  const item = req.app.locals.dbConnected ? await Movie.findById(req.params.id).lean() : null;
+  const item = req.app.locals.dbConnected && /^[a-f0-9]{24}$/i.test(req.params.id) ? await Movie.findById(req.params.id).lean() : null;
   const movie = item || demoMovies.find(m => String(m.id) === req.params.id);
   if (!movie) return res.status(404).json({ message: "Movie not found" });
   res.json({ movie });
