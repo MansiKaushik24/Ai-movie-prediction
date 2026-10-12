@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const requireAuth = require("../middleware/requireAuth");
 // Demonstration heuristic only; replace with a trained and evaluated ML model for real predictions.
-router.post("/", (req, res) => {
+router.post("/", requireAuth, (req, res) => {
  const { genre, year, startingRating } = req.body || {};
  const allowed = ["Action","Adventure","Animation","Comedy","Drama","Horror","Romance","Sci-Fi","Thriller"];
  const y = Number(year), r = Number(startingRating);
