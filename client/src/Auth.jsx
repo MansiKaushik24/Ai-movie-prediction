@@ -3,6 +3,8 @@ import { Clapperboard, ArrowRight, Eye, EyeOff, Sparkles, Film, Star, ShieldChec
 import "./auth.css";
 const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 export default function Auth({ onAuthenticated, onSkip }) {
+ const [theme,setTheme]=useState(()=>localStorage.getItem("cinemind_theme")||"dark");
+ useEffect(()=>{document.documentElement.dataset.theme=theme;localStorage.setItem("cinemind_theme",theme)},[theme]);
  const [mode,setMode]=useState("login"),[showPassword,setShowPassword]=useState(false),[name,setName]=useState(""),[email,setEmail]=useState(""),[password,setPassword]=useState(""),[busy,setBusy]=useState(false),[error,setError]=useState("");
  const isSignup=mode==="signup";
  async function submit(event){event.preventDefault();setError("");setBusy(true);try{const response=await fetch(API+"/auth/"+(isSignup?"register":"login"),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(isSignup?{name,email,password}:{email,password})});const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(data.message||"Could not sign in. Please try again.");if(!data.token||!data.user)throw new Error("Unexpected response from server.");localStorage.setItem("cinemind_token",data.token);onAuthenticated(data)}catch(err){setError(err.message||"Cannot reach the server. Please try again.")}finally{setBusy(false)}}
