@@ -2,8 +2,6 @@ const express = require("express");
 const Movie = require("../models/Movie");
 const demoMovies = require("../data/movies");
 const router = express.Router();
-const requireAuth = require("../middleware/requireAuth");
-router.use(requireAuth);
 
 router.get("/", async (req, res, next) => {
  try {
