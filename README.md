@@ -18,10 +18,11 @@ Requires Node.js 20+.
 
 1. In the repository root run: `npm run install:all`
 2. Copy `server/.env.example` to `server/.env`.
-3. Optional: set `MONGODB_URI` to a local MongoDB or MongoDB Atlas connection string.
-4. Start the API in terminal 1: `npm run dev:server`
-5. Start the UI in terminal 2: `npm run dev:client`
-6. Open `http://localhost:5173`.
+3. Set `MONGODB_URI` to a local MongoDB or MongoDB Atlas connection string (required for registration and login).
+4. Set `JWT_SECRET` to a private random secret at least 32 characters long.
+5. Start the API in terminal 1: `npm run dev:server`
+6. Start the UI in terminal 2: `npm run dev:client`
+7. Open `http://localhost:5173`.
 
 API routes: `GET /api/health`, `GET /api/movies`, `GET /api/movies/:id`, `POST /api/recommendations`, and `POST /api/predictions`.
 
