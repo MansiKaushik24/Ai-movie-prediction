@@ -1,9 +1,14 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 const requireAuth = require("../middleware/requireAuth");
 const router = express.Router();
+router.use((_req, res, next) => {
+ if (mongoose.connection.readyState !== 1) return res.status(503).json({ message: "Account services are unavailable because the database is not connected." });
+ next();
+});
 function issueToken(user) {
  if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32) { const error = new Error("Server authentication is not configured. Set JWT_SECRET to a random secret of at least 32 characters."); error.status = 503; throw error; }
  return jwt.sign({ sub: String(user._id) }, process.env.JWT_SECRET, { expiresIn: "7d", issuer: "cinemind-api", audience: "cinemind-client" });
