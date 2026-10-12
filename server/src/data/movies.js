@@ -1,0 +1,14 @@
+module.exports = [
+{id:1,title:"Interstellar",year:2014,genre:"Sci-Fi",rating:8.7,poster:"https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",description:"A team of explorers travels beyond this galaxy to discover whether mankind has a future among the stars."},
+{id:2,title:"Dune: Part Two",year:2024,genre:"Sci-Fi",rating:8.5,poster:"https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg",description:"Paul Atreides unites with the Fremen."},
+{id:3,title:"The Dark Knight",year:2008,genre:"Action",rating:9.0,poster:"https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",description:"Batman faces a criminal mastermind who plunges Gotham into chaos."},
+{id:4,title:"Everything Everywhere All at Once",year:2022,genre:"Adventure",rating:7.8,poster:"https://image.tmdb.org/t/p/w500/w3LxiVYdWWRvEVdn5RYq6jIqkb1.jpg",description:"An exhausted laundromat owner discovers that she alone can save the multiverse."},
+{id:5,title:"La La Land",year:2016,genre:"Romance",rating:8.0,poster:"https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg",description:"A jazz musician and an aspiring actress fall in love."},
+{id:6,title:"Parasite",year:2019,genre:"Thriller",rating:8.5,poster:"https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",description:"Greed and class discrimination threaten two families."},
+{id:7,title:"Spider-Man: Across the Spider-Verse",year:2023,genre:"Animation",rating:8.6,poster:"https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",description:"Miles Morales travels across the multiverse."},
+{id:8,title:"The Shawshank Redemption",year:1994,genre:"Drama",rating:9.3,poster:"https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",description:"Two imprisoned men bond over years, finding solace and redemption."},
+{id:9,title:"Get Out",year:2017,genre:"Horror",rating:7.8,poster:"https://image.tmdb.org/t/p/w500/tFXcEccSQMf3lfhfXKSU9iRBpa3.jpg",description:"A young man visits his girlfriend's family estate and uncovers a disturbing secret."},
+{id:10,title:"The Grand Budapest Hotel",year:2014,genre:"Comedy",rating:8.1,poster:"https://image.tmdb.org/t/p/w500/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",description:"A legendary concierge becomes embroiled in the theft of a priceless painting."},
+{id:11,title:"Inception",year:2010,genre:"Sci-Fi",rating:8.8,poster:"https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg",description:"A skilled thief enters people's dreams to steal secrets."},
+{id:12,title:"Whiplash",year:2014,genre:"Drama",rating:8.5,poster:"https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg",description:"A young drummer faces a demanding teacher at a music conservatory."}
+];
